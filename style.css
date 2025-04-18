@@ -1,0 +1,641 @@
+:root {
+    --orange: #ff9e00;
+    --deep-purple: #240046;
+    --navy-blue: #3c096c;
+    --blue-purple: #5a189a;
+    --medium-purple: #7b2cbf;
+    --light-purple: #9d4edd;
+    --text: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --background: #1a0032;
+    --blog-text: #1a1a1a;
+    --blog-link: #ff9e00;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* Navbar Styles */
+.navbar {
+    background: linear-gradient(
+        to right,
+        rgba(36, 0, 70, 0.95),
+        rgba(60, 9, 108, 0.95)
+    );
+    padding: 1rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 158, 0, 0.1);
+}
+
+.nav-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, var(--orange), #ff69b4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.5px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.primary-links {
+    display: flex;
+    gap: 2rem;
+    margin-right: 2rem;
+    border-right: 1px solid rgba(255, 158, 0, 0.2);
+    padding-right: 2rem;
+}
+
+.secondary-links {
+    display: flex;
+    gap: 2rem;
+    opacity: 0.8;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 160px 20px 60px;
+    background: radial-gradient(
+        circle at center,
+        rgba(157, 78, 221, 0.1),
+        transparent 70%
+    );
+}
+
+.glow-text {
+    font-size: 3.5rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, var(--orange), #ff69b4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(255, 158, 0, 0.5);
+    margin-bottom: 1rem;
+    animation: textGlow 2s infinite alternate;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    text-shadow: 0 0 10px rgba(157, 78, 221, 0.3);
+}
+
+/* Hero Banner Styles */
+.hero-banner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Feature Cards */
+.features {
+    padding: 60px 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    position: relative;
+    background: rgba(60, 9, 108, 0.3);
+    border: 1px solid rgba(255, 158, 0, 0.2);
+    padding: 2.5rem;
+    text-align: center;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--orange), transparent);
+    animation: borderGlow 2s infinite;
+}
+
+.glow-icon {
+    font-size: 2.8rem;
+    color: var(--orange);
+    margin-bottom: 1.5rem;
+    animation: iconGlow 2s infinite alternate;
+}
+
+.card-title {
+    color: var(--text);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(255, 158, 0, 0.3);
+}
+
+.card-description {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Coming Soon Tag */
+.coming-soon-tag.glow {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: linear-gradient(45deg, var(--orange), var(--light-purple));
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: white;
+    box-shadow: 0 0 15px rgba(255, 158, 0, 0.3);
+    animation: tagGlow 2s infinite alternate;
+}
+
+/* Benefits Section */
+.benefits {
+    padding: 60px 5%;
+    background: radial-gradient(
+        circle at center,
+        rgba(157, 78, 221, 0.05),
+        transparent 70%
+    );
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.benefit-card {
+    position: relative;
+    background: rgba(60, 9, 108, 0.2);
+    border: 1px solid rgba(255, 158, 0, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.benefit-title {
+    font-size: 1.5rem;
+    color: var(--text);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    background: linear-gradient(45deg, var(--orange), #ff69b4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(255, 158, 0, 0.3);
+}
+
+.benefit-description {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+    background: rgba(36, 0, 70, 0.95);
+    padding: 3rem 5% 1rem;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(255, 158, 0, 0.1);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-brand h3 {
+    font-size: 1.8rem;
+    background: linear-gradient(45deg, var(--orange), #ff69b4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.footer-section h4 {
+    color: var(--orange);
+    margin-bottom: 1rem;
+}
+
+.footer-section a {
+    display: block;
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    transition: 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--orange);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 158, 0, 0.1);
+    color: var(--text-secondary);
+}
+
+/* Animations */
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 158, 0, 0.3);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(255, 158, 0, 0.6);
+    }
+}
+
+@keyframes iconGlow {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 158, 0, 0.3);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(255, 158, 0, 0.6);
+    }
+}
+
+@keyframes borderGlow {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes tagGlow {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 158, 0, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(255, 158, 0, 0.5);
+    }
+}
+
+/* Hover Effects */
+.feature-card:hover,
+.benefit-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--orange);
+    box-shadow: 0 10px 25px rgba(255, 158, 0, 0.15);
+}
+
+.read-more.glow-text-subtle {
+    color: var(--orange);
+    font-weight: 500;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: linear-gradient(
+            to right,
+            rgba(36, 0, 70, 0.98),
+            rgba(60, 9, 108, 0.98)
+        );
+        padding: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .primary-links,
+    .secondary-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .hero-section {
+        padding: 120px 20px 40px;
+    }
+
+    .glow-text {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .features,
+    .benefits {
+        padding: 40px 20px;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: var(--text);
+    }
+}
+
+/* Blog Post Text Colors */
+.blog-post {
+    color: var(--blog-text);
+}
+
+.post-content {
+    color: var(--blog-text);
+}
+
+.post-content p,
+.post-content li,
+.post-content h2,
+.post-content h3,
+.post-content .prompt-content,
+.post-content .tool-card,
+.post-content .resource-section {
+    color: var(--blog-text);
+}
+
+/* Ensure links are visible */
+.post-content a {
+    color: var(--blog-link);
+}
+
+/* Keep the header text white since it's on a dark background */
+.post-header {
+    color: #fff;
+}
+
+/* Ensure proper contrast for blockquotes and special boxes */
+.prompt-box,
+.tool-card,
+.example-box,
+.resource-section {
+    background: #fff;
+}
+
+/* Ensure proper contrast for lists */
+.feature-list li,
+.check-list li,
+.resource-list li {
+    color: var(--blog-text);
+}
+
+/* Ensure consistent text colors */
+.post-content {
+    color: var(--blog-text);
+}
+
+/* Style all links within blog content */
+.post-content a,
+.tool-link,
+.resource-list a {
+    color: var(--blog-link);  /* Using the orange color */
+    text-decoration: none;
+}
+
+/* Style strong and emphasized text */
+.post-content strong,
+.post-content b,
+.post-content em,
+.post-content i,
+.tool-card strong,
+.prompt-content strong,
+.resource-section strong {
+    color: var(--blog-text);  /* Ensure bold and italic text is black */
+}
+
+/* Style headings */
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+    color: var(--blog-text);
+}
+
+/* Style list items */
+.post-content ul li,
+.post-content ol li,
+.feature-list li,
+.check-list li,
+.resource-list li,
+.tool-card li {
+    color: var(--blog-text);
+}
+
+/* Style blockquotes and special content */
+.prompt-box,
+.example-box,
+.tip-box,
+.blockquote {
+    color: var(--blog-text);
+}
+
+/* Style code and pre elements if any */
+.post-content code,
+.post-content pre {
+    color: var(--blog-text);
+}
+
+/* Blog Grid - Vertical List Layout */
+.blog-grid {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Individual blog card in listing */
+.blog-card {
+    width: 100%;
+    background: #fff;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--blog-heading);
+    transition: transform 0.3s ease;
+}
+
+.blog-card.featured {
+    border-left: 4px solid #ff9e00;
+}
+
+.blog-card-content {
+    padding: 20px;
+}
+
+/* Blog post page styles */
+.blog-post {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+}
+
+.post-content {
+    border-left: 4px solid var(--blog-heading);
+    padding: 20px;
+    margin: 20px auto;
+}
+
+/* Common styles */
+.content-section {
+    border-left: 4px solid var(--blog-heading);
+    padding: 20px;
+    margin: 20px 0;
+    background: #fff;
+}
+
+.prompt-box,
+.tool-card,
+.resource-section {
+    border-left: 4px solid var(--blog-heading);
+    padding: 20px;
+    margin: 15px 0;
+    background: #fff;
+}
+
+/* Header styles */
+.blog-header {
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 20px;
+}
+
+.blog-header h1 {
+    color: var(--blog-heading);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.blog-header p {
+    color: var(--blog-text);
+    font-size: 1.2rem;
+}
+
+/* Meta information */
+.blog-meta {
+    color: var(--blog-meta);
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+/* Hover effects */
+.blog-card:hover {
+    transform: translateX(10px);
+    background: #f8f9fa;
+}
+
+.menu-toggle {
+    display: none;  /* Hidden by default on desktop */
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--text);
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;  /* Shown on mobile */
+    }
+    
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: linear-gradient(
+            to right,
+            rgba(36, 0, 70, 0.98),
+            rgba(60, 9, 108, 0.98)
+        );
+        padding: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+<nav class="navbar">
+    <div class="nav-brand">Growpodex</div>
+    <div class="nav-links">
+        <a href="../../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <a href="../blogs.html">Blogs</a>
+        <a href="../terms.html">Terms</a>
+        <a href="../privacy.html">Privacy</a>
+    </div>
+</nav> 
